@@ -1,0 +1,47 @@
+# ---------------------------
+# Environnement virtuel Python
+# ---------------------------
+venv/
+.env/
+*.py[cod]        # fichiers compilés Python (.pyc, .pyo)
+__pycache__/     # dossier cache Python
+
+# ---------------------------
+# IDE / éditeur
+# ---------------------------
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# ---------------------------
+# Logs et fichiers temporaires
+# ---------------------------
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# ---------------------------
+# Distribution / packaging
+# ---------------------------
+dist/
+build/
+*.egg-info/
+.eggs/
+*.whl
+
+# ---------------------------
+# Tests / coverage
+# ---------------------------
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+
+# ---------------------------
+# Autres fichiers à ignorer
+# ---------------------------
+*.DS_Store      # macOS
+Thumbs.db       # Windows
