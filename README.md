@@ -1,7 +1,7 @@
 # Description du répertoire
 Projet *Bataille navale* suivant le cours **Coder et développer en python** à *Centrale Méditerranée*
 
-But du projet : coder un jeu de bataille navale avec une interface pour un joueur uniquement
+--> Objectif : coder un jeu de bataille navale avec une interface pour un joueur uniquement
 
 
 ---
