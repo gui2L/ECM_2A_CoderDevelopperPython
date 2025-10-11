@@ -1,8 +1,7 @@
 # Description du répertoire
 Projet *Bataille navale* suivant le cours **Coder et développer en python** à *Centrale Méditerranée*
 
---> Objectif : coder un jeu de bataille navale avec une interface pour un joueur uniquement
-
+--> Objectif : coder en Python un jeu de bataille navale avec une interface pour un joueur uniquement
 
 ---
 
@@ -10,7 +9,9 @@ Projet *Bataille navale* suivant le cours **Coder et développer en python** à 
 Python `3.13.7`
 
 ### Execution :
+```bash 
 
+```
 ---
 
 ### License : 
@@ -18,3 +19,4 @@ Python `3.13.7`
 --- 
 
 ### Auteur :
+Guillaume Surleau - guillaume.surleau@centrale.med.fr
