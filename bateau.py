@@ -10,9 +10,9 @@ class Bateau:
     def positions(self):
         positions = []
         if self.vertical:
-            for i in range(self.ligne):
+            for i in range(self.longueur):
                 positions.append((i+self.ligne, self.colonne))
         else:
-            for j in range(self.ligne):
+            for j in range(self.longueur):
                 positions.append((self.ligne, self.colonne+j))
         return positions
