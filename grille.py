@@ -16,6 +16,7 @@ class Grille:
             lignes.append(ligne)
         return "\n".join(lignes)
 
+
     def afficher(self):
         for i in range(self.nombre_lignes):
             ligne = ""
@@ -26,11 +27,14 @@ class Grille:
 
     def tirer(self, x:int, y:int):
         if (x <= 0 or x > self.nombre_lignes or y <= 0 or y > self.nombre_colonnes):
-            print("Coords invalides")
+            print("coordonnées invalides")
             return -1
         else:
-            self.matrice[(x-1)*self.nombre_colonnes+(y-1)] = 'x'
-            print(f"case ({x}, {y}) touchée")
+            if (self.matrice[(x-1)*self.nombre_colonnes+(y-1)] != 'x'):
+                self.matrice[(x-1)*self.nombre_colonnes+(y-1)] = 'x'
+                print(f"case ({x}, {y}) touchée")
+            else:
+                print(f"case ({x}, {y}) déjà touchée")
         print()
         
         return (x-1)*self.nombre_colonnes+(y-1)
