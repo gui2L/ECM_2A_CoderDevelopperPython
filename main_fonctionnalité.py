@@ -13,7 +13,7 @@ def main():
     g.tirer(4, 3)
     g.tirer(5, 8)
 
-    g.afficher()
+    print(g)
     return 0
 
 if __name__ == "__main__":

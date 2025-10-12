@@ -2,7 +2,7 @@ class Grille:
     vide = '~'
 
 
-    def __init__(self, nombre_lignes=0, nombre_colonnes=0):
+    def __init__(self, nombre_lignes=4, nombre_colonnes=4):
         self.matrice = [Grille.vide for _ in range(nombre_colonnes*nombre_lignes)]
         self.nombre_colonnes = nombre_colonnes
         self.nombre_lignes = nombre_lignes

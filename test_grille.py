@@ -1,7 +1,13 @@
 from grille import Grille
 
 def test_init():
-    g1 = Grille()
+    g = Grille() # grille 4x4 par defaut choisie personnellement 
+    assert g.nombre_lignes == 4
+    assert g.nombre_colonnes == 4
+    assert len(g.matrice) == 4*4
+
+
+    g1 = Grille(0, 0) 
     assert g1.nombre_lignes == 0
     assert g1.nombre_colonnes == 0
     assert len(g1.matrice) == 0
@@ -13,13 +19,8 @@ def test_init():
 
     g3 = Grille(1)
     assert g3.nombre_lignes == 1
-    assert g3.nombre_colonnes == 0
-    assert len(g3.matrice) == 0
-
-    g4 = Grille(0, 5)
-    assert g4.nombre_lignes == 0
-    assert g4.nombre_colonnes == 5
-    assert len(g4.matrice) == 0
+    assert g3.nombre_colonnes == 4
+    assert len(g3.matrice) == 4
 
 
 def test_affichage(capsys):
