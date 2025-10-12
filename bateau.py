@@ -6,3 +6,13 @@ class Bateau:
         self.colonne = colonne
         self.longueur = longueur
         self.vertical = vertical
+
+    def positions(self):
+        positions = []
+        if self.vertical:
+            for i in range(self.ligne):
+                positions.append((i+self.ligne, self.colonne))
+        else:
+            for j in range(self.ligne):
+                positions.append((self.ligne, self.colonne+j))
+        return positions
