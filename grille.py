@@ -1,5 +1,5 @@
 class Grille:
-    vide = "~"
+    vide = '~'
 
 
     def __init__(self, nombre_lignes=0, nombre_colonnes=0):
@@ -22,6 +22,10 @@ class Grille:
             for j in range(self.nombre_colonnes):
                 ligne += self.matrice[i*self.nombre_colonnes+j]
             print(ligne)
+
+    def tirer(self, x:int, y:int):
+        self.matrice[x*self.nombre_colonnes+y] = 'x'
+
 
 
     
