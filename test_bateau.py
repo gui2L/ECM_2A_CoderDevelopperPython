@@ -12,3 +12,8 @@ def test_Bateau_init():
     assert b2.colonne == 2
     assert b2.longueur == 1     # valeur par défaut
     assert b2.vertical is False # valeur par défaut
+
+
+def test_Bateau_positions():
+    assert Bateau(2, 3, longueur=3).positions() == [(2, 3), (2, 4), (2, 5)]
+    assert Bateau(2, 3, longueur=3, vertical=True).positions() == [(2, 3), (3, 3), (4, 3)]
