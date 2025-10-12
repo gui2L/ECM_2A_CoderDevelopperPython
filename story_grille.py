@@ -16,6 +16,6 @@ while True:
             print("Entrée invalide ! Veuillez entrer deux nombres séparés par un espace.")
 
     #4. tirer à l'endroit indiqué sur la grille
-    #g.tirer(x, y)
+    g.tirer(x, y)
 
     #5. retour en 2
