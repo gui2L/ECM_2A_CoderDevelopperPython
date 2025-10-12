@@ -1,9 +1,11 @@
+from grille import Grille
+
 #1. créer une grille à 5 lignes et 8 colonnes
-#g = Grille(5, 8)
+g = Grille(5, 8)
 
 while True:
     #2. afficher la grille à l'écran
-    #g.afficher()
+    g.afficher()
 
     #3. demande à l'utilisateur de rentrer deux coordonnées x et y
     while True:
