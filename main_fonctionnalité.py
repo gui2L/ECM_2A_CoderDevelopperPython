@@ -5,9 +5,15 @@ def main():
     g = Grille(5, 8)
     
     g.afficher()
-    print()
     print(g)
+    print()
 
+    g.tirer(1, 1)
+    g.tirer(2, 1)
+    g.tirer(4, 3)
+    g.tirer(5, 8)
+
+    g.afficher()
     return 0
 
 if __name__ == "__main__":

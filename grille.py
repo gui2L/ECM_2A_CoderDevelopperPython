@@ -3,7 +3,7 @@ class Grille:
 
 
     def __init__(self, nombre_lignes=0, nombre_colonnes=0):
-        self.matrice = [Grille.vide for i in range(nombre_colonnes*nombre_lignes)]
+        self.matrice = [Grille.vide for _ in range(nombre_colonnes*nombre_lignes)]
         self.nombre_colonnes = nombre_colonnes
         self.nombre_lignes = nombre_lignes
 
@@ -22,6 +22,7 @@ class Grille:
             for j in range(self.nombre_colonnes):
                 ligne += self.matrice[i*self.nombre_colonnes+j]
             print(ligne)
+        print()
 
     def tirer(self, x:int, y:int):
         if (x <= 0 or x > self.nombre_lignes or y <= 0 or y > self.nombre_colonnes):
@@ -30,7 +31,7 @@ class Grille:
         else:
             self.matrice[(x-1)*self.nombre_colonnes+(y-1)] = 'x'
             print(f"case ({x}, {y}) touchée")
-
+        print()
         
         return (x-1)*self.nombre_colonnes+(y-1)
                 
