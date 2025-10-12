@@ -1,6 +1,6 @@
 from grille import Grille
 
-def test_init():
+def test_Grille_init():
     g = Grille() # grille 4x4 par defaut choisie personnellement 
     assert g.nombre_lignes == 4
     assert g.nombre_colonnes == 4
@@ -23,7 +23,7 @@ def test_init():
     assert len(g3.matrice) == 4
 
 
-def test_affichage(capsys):
+def test_Grille_affichage(capsys):
     g = Grille(5, 8)
 
     g.afficher()
@@ -38,7 +38,7 @@ def test_affichage(capsys):
 
 
 
-def test_tirer():
+def test_Grille_tirer():
     g = Grille(5, 8)
 
     error1 = g.tirer(0, 0)
