@@ -24,7 +24,16 @@ class Grille:
             print(ligne)
 
     def tirer(self, x:int, y:int):
-        self.matrice[x*self.nombre_colonnes+y] = 'x'
+        if (x <= 0 or x > self.nombre_lignes or y <= 0 or y > self.nombre_colonnes):
+            print("Coords invalides")
+            return -1
+        else:
+            self.matrice[(x-1)*self.nombre_colonnes+(y-1)] = 'x'
+            print(f"case ({x}, {y}) touchée")
+
+        
+        return (x-1)*self.nombre_colonnes+(y-1)
+                
 
 
 
