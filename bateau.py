@@ -7,6 +7,8 @@ class Bateau:
         self.longueur = longueur
         self.vertical = vertical
 
+
+
     @property
     def positions(self):
         positions = []
@@ -17,3 +19,6 @@ class Bateau:
             for j in range(self.longueur):
                 positions.append((self.ligne, self.colonne+j))
         return positions
+    
+    def chevauche(self, autre):
+        return not set(self.positions).isdisjoint(autre.positions)
