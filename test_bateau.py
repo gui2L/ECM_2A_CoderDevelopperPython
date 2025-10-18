@@ -58,7 +58,7 @@ def test_Bateau_type():
     assert(PorteAvion1.marque == "🚢")
     assert(PorteAvion1.longueur == 4)
 
-    assert(Croiseur1.marque == "⛴")
+    assert(Croiseur1.marque == "⛴ ")
     assert(Croiseur1.longueur == 3)
 
     assert(Torpilleur1.marque == "🚣")

@@ -36,8 +36,21 @@ def main():
     g.ajoute(Torpilleur1)
 
     print(g)
+    print()
 
+    g = Grille(4, 4)
 
+    PorteAvion1 = Porte_avion(0, 0)
+    Torpilleur1 = Torpilleur(1, 0)
+    Sous_marin1 = Sous_marin(2, 0)
+    Croiseur1 = Croiseur(3, 0)
+
+    ajout1 = g.ajoute(PorteAvion1)
+    ajout2 = g.ajoute(Torpilleur1)
+    ajout3 = g.ajoute(Sous_marin1)
+    ajout4 = g.ajoute(Croiseur1)
+
+    print(g)
     return 0
 
 if __name__ == "__main__":

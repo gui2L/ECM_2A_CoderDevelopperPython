@@ -79,14 +79,26 @@ def test_Grille_ajoute():
 
 def test_Grille_ajoute_bateau_specifique():
 
-    g = Grille(5, 8)
+    g = Grille(4, 4)
 
-    PorteAvion1 = Porte_avion(0, 8, True)
-    Torpilleur1 = Torpilleur(0, 3)
-    Sous_marin1 = Sous_marin(3, 2, True)
-    Croiseur1 = Croiseur(7, 8)
+    PorteAvion1 = Porte_avion(0, 0)
+    Torpilleur1 = Torpilleur(1, 0)
+    Sous_marin1 = Sous_marin(2, 0)
+    Croiseur1 = Croiseur(3, 0)
 
-    g.ajoute(PorteAvion1)
-    g.ajoute(Torpilleur1)
-    g.ajoute(Sous_marin1)
-    g.ajoute(Croiseur1)
+    ajout1 = g.ajoute(PorteAvion1)
+    ajout2 = g.ajoute(Torpilleur1)
+    ajout3 = g.ajoute(Sous_marin1)
+    ajout4 = g.ajoute(Croiseur1)
+
+    assert(ajout1 == True)
+    assert(ajout2 == True)
+    assert(ajout3 == True)
+    assert(ajout4 == True)
+
+    assert(g.matrice == ['🚢', '🚢', '🚢', '🚢', '🚣', '🚣', '〰️', '〰️', '🐟', '🐟', '〰️', '〰️', '⛴ ', '⛴ ', '⛴ ', '〰️'])
+
+    
+
+
+

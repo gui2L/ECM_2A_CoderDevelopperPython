@@ -37,7 +37,7 @@ class Porte_avion(Bateau):
 class Croiseur(Bateau):
     def __init__(self, ligne, colonne, vertical = False):
         super().__init__(ligne=ligne, colonne=colonne, longueur=3, vertical=vertical)
-        self.marque = "⛴"
+        self.marque = "⛴ "
     
 class Torpilleur(Bateau):
     def __init__(self, ligne, colonne, vertical = False):
