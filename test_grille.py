@@ -1,5 +1,5 @@
 from grille import Grille
-from bateau import Bateau
+from bateau import *
 
 def test_Grille_init():
     g = Grille() # grille 4x4 par defaut choisie personnellement 
@@ -72,3 +72,17 @@ def test_Grille_ajoute():
     g2.ajoute(Bateau(1, 0, longueur=2, vertical=True))
     g2.ajoute(Bateau(1, 0, longueur=4, vertical=True))
     assert(g2.matrice == [vide, vide, vide, vide, vide, vide])
+
+def test_Grille_ajoute_bateau_specifique():
+
+    g = Grille(5, 8)
+
+    PorteAvion1 = Porte_avion(0, 8, True)
+    Torpilleur1 = Torpilleur(0, 3)
+    Sous_marin1 = Sous_marin(3, 2, True)
+    Croiseur1 = Croiseur(7, 8)
+
+    g.ajoute(PorteAvion1)
+    g.ajoute(Torpilleur1)
+    g.ajoute(Sous_marin1)
+    g.ajoute(Croiseur1)

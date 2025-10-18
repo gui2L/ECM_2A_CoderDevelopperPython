@@ -1,4 +1,4 @@
-from bateau import Bateau 
+from bateau import * 
 from grille import Grille
 
 def test_Bateau_init():
@@ -47,4 +47,30 @@ def test_Bateau_coulé():
     g.tirer(2, 4)
     assert(b2.coulé(g) == True)
     assert(b3.coulé(g) == False)
+
+def test_Bateau_type():
+
+    PorteAvion1 = Porte_avion(0, 8, True)
+    Torpilleur1 = Torpilleur(0, 3)
+    Sous_marin1 = Sous_marin(3, 2, True)
+    Croiseur1 = Croiseur(7, 8)
+
+    assert(PorteAvion1.marque == "🚢")
+    assert(PorteAvion1.longueur == 4)
+
+    assert(Croiseur1.marque == "⛴")
+    assert(Croiseur1.longueur == 3)
+
+    assert(Torpilleur1.marque == "🚣")
+    assert(Torpilleur1.longueur == 2)
+
+    assert(Sous_marin1.marque == "🐟")
+    assert(Sous_marin1.longueur == 2)
+
+
+
+
+
+    
+
 

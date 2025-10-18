@@ -43,7 +43,7 @@ class Grille:
         
         return (x)*self.nombre_colonnes+(y)
                 
-    def ajoute(self, bateau : Bateau):
+    def ajoute(self, bateau):
         pos = []
         for i in range(bateau.longueur):
             x = bateau.positions[i][0]
@@ -56,7 +56,7 @@ class Grille:
             for i in range(bateau.longueur):
                 x = pos[i][0]
                 y = pos[i][1]
-                self.matrice[(x)*self.nombre_colonnes+(y)] = Grille.icon_bat
+                self.matrice[(x)*self.nombre_colonnes+(y)] = bateau.marque
         else:
             print(f"le bateau de coords : {bateau.positions} ne rentre pas dans la grille\n")
         
