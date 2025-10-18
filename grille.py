@@ -34,8 +34,8 @@ class Grille:
             print("coordonnées invalides")
             return -1
         else:
-            if (self.matrice[(x)*self.nombre_colonnes+(y)] != Grille.touche):
-                self.matrice[(x)*self.nombre_colonnes+(y)] = Grille.touche
+            if (self.matrice[(x)*self.nombre_colonnes+(y)] != touche):
+                self.matrice[(x)*self.nombre_colonnes+(y)] = touche
                 print(f"case ({x}, {y}) touchée")
             else:
                 print(f"case ({x}, {y}) déjà touchée")
