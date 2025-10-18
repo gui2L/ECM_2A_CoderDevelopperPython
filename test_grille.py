@@ -68,6 +68,7 @@ def test_Grille_ajoute():
     ajout1 = g1.ajoute(Bateau(1, 0, longueur=2, vertical=False))
     assert(ajout1 == True)
     assert(g1.matrice == [vide, vide, vide, icon_bat, icon_bat , vide])
+    assert(len(g1.bateaux) == 1) 
 
     g2 = Grille(2, 3)
     ajout2 = g2.ajoute(Bateau(1, 0, longueur=2, vertical=True))
@@ -76,6 +77,7 @@ def test_Grille_ajoute():
     assert(ajout2 == False)
     assert(ajout3 == False)
     assert(g2.matrice == [vide, vide, vide, vide, vide, vide])
+    assert(len(g2.bateaux) == 0) 
 
 def test_Grille_ajoute_bateau_specifique():
 
@@ -97,7 +99,7 @@ def test_Grille_ajoute_bateau_specifique():
     assert(ajout4 == True)
 
     assert(g.matrice == ['🚢', '🚢', '🚢', '🚢', '🚣', '🚣', '〰️', '〰️', '🐟', '🐟', '〰️', '〰️', '⛴ ', '⛴ ', '⛴ ', '〰️'])
-
+    assert(len(g.bateaux) == 4)
     
 
 

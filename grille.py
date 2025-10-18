@@ -5,11 +5,11 @@ class Grille:
     icon_bat = "⛵"
     touche = "💥"
 
-
     def __init__(self, nombre_lignes=4, nombre_colonnes=4):
         self.matrice = [Grille.vide for _ in range(nombre_colonnes*nombre_lignes)]
         self.nombre_colonnes = nombre_colonnes
         self.nombre_lignes = nombre_lignes
+        self.bateaux = []
 
     def __str__(self):
         lignes = []
@@ -57,6 +57,7 @@ class Grille:
                 x = pos[i][0]
                 y = pos[i][1]
                 self.matrice[(x)*self.nombre_colonnes+(y)] = bateau.marque
+            self.bateaux.append(bateau)
             return True
         else:
             print(f"le bateau de coords : {bateau.positions} ne rentre pas dans la grille\n")
