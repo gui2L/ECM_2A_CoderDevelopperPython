@@ -65,12 +65,16 @@ def test_Grille_ajoute():
     icon_bat = g1.icon_bat
     touche = g1.touche
 
-    g1.ajoute(Bateau(1, 0, longueur=2, vertical=False))
+    ajout1 = g1.ajoute(Bateau(1, 0, longueur=2, vertical=False))
+    assert(ajout1 == True)
     assert(g1.matrice == [vide, vide, vide, icon_bat, icon_bat , vide])
 
     g2 = Grille(2, 3)
-    g2.ajoute(Bateau(1, 0, longueur=2, vertical=True))
-    g2.ajoute(Bateau(1, 0, longueur=4, vertical=True))
+    ajout2 = g2.ajoute(Bateau(1, 0, longueur=2, vertical=True))
+    ajout3 = g2.ajoute(Bateau(1, 0, longueur=4, vertical=True))
+    
+    assert(ajout2 == False)
+    assert(ajout3 == False)
     assert(g2.matrice == [vide, vide, vide, vide, vide, vide])
 
 def test_Grille_ajoute_bateau_specifique():

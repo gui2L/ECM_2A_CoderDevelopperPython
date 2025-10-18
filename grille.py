@@ -57,8 +57,10 @@ class Grille:
                 x = pos[i][0]
                 y = pos[i][1]
                 self.matrice[(x)*self.nombre_colonnes+(y)] = bateau.marque
+            return True
         else:
             print(f"le bateau de coords : {bateau.positions} ne rentre pas dans la grille\n")
+            return False
         
 
 
