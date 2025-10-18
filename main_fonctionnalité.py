@@ -1,5 +1,5 @@
 from grille import Grille
-from bateau import Bateau
+from bateau import *
 
 def main():
     
@@ -25,6 +25,12 @@ def main():
 
     print(b2.coulé(g))
     print(b3.coulé(g))
+
+    PorteAvion1 = Porte_avion(0, 2, True)
+    print(PorteAvion1.marque)
+
+    Torpilleur1 = Torpilleur(0, 3)
+    print(Torpilleur1.marque)
 
     return 0
 

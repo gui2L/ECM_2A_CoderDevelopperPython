@@ -28,3 +28,25 @@ class Bateau:
             if g.matrice[(tuple[0])*g.nombre_colonnes+(tuple[1])] != g.touche:
                 return False
         return True
+    
+class Porte_avion(Bateau):
+    def __init__(self, ligne, colonne, vertical = False):
+        super().__init__(ligne=ligne, colonne=colonne, longueur=4, vertical=vertical)
+        self.marque = "🚢"
+
+class Croiseur(Bateau):
+    def __init__(self, ligne, colonne, vertical = False):
+        super().__init__(ligne=ligne, colonne=colonne, longueur=3, vertical=vertical)
+        self.marque = "⛴"
+    
+class Torpilleur(Bateau):
+    def __init__(self, ligne, colonne, vertical = False):
+        super().__init__(ligne=ligne, colonne=colonne, longueur=2, vertical=vertical)
+        self.marque = "🚣"
+
+class Sous_marin(Bateau):
+    def __init__(self, ligne, colonne, vertical = False):
+        super().__init__(ligne=ligne, colonne=colonne, longueur=2, vertical=vertical)
+        self.marque = "🐟"
+    
+        
