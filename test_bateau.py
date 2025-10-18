@@ -31,22 +31,18 @@ def test_Bateau_chevauche():
     assert(b4.chevauche(b3))
      
 def test_Bateau_coulé():
-    g = Grille(5, 8)
+    g = Grille(6, 8)
 
     b1 = Bateau(2, 3, 4)
-    b2 = Bateau(1, 4, 2, True)
-    b3 = Bateau(3, 5, 4)
-    b4 = Bateau(3, 5, 4)
-
+    b2 = Bateau(3, 4, 2, True)
+    
     g.ajoute(b1)
     g.ajoute(b2)
-    g.ajoute(b3)
-    g.ajoute(b4)
 
-    g.tirer(1, 4)
-    g.tirer(2, 4)
+    g.tirer(3, 4)
+    g.tirer(4, 4)
     assert(b2.coulé(g) == True)
-    assert(b3.coulé(g) == False)
+    assert(b1.coulé(g) == False)
 
 def test_Bateau_type():
 

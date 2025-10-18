@@ -5,12 +5,13 @@ class Grille:
     vide = "〰️" 
     icon_bat = "⛵"
     touche = "💥"
+    types = {"🚢" : "Porte-avion", "⛴ " : "Croiseur", "🚣" : "Torpilleur", "🐟" : "Sous_marin"}
 
     def __init__(self, nombre_lignes=4, nombre_colonnes=4):
         self.matrice = [Grille.vide for _ in range(nombre_colonnes*nombre_lignes)]
         self.nombre_colonnes = nombre_colonnes
         self.nombre_lignes = nombre_lignes
-        self.bateaux = []
+        self.bateaux = {}
 
     def __str__(self):
         lignes = []
@@ -35,11 +36,19 @@ class Grille:
             print("coordonnées invalides")
             return -1
         else:
-            if (self.matrice[(x)*self.nombre_colonnes+(y)] != touche):
-                self.matrice[(x)*self.nombre_colonnes+(y)] = touche
-                print(f"case ({x}, {y}) touchée")
+            case = self.matrice[(x)*self.nombre_colonnes+(y)]
+            if (case == Grille.vide):
+                print(f"rien touché en ({x}, {y})")
+            elif (case == touche):
+                print(f"bateau en ({x}, {y}) déjà touché")
             else:
-                print(f"case ({x}, {y}) déjà touchée")
+                marque = case
+                self.matrice[x*self.nombre_colonnes+y] = touche
+                print(f"bateau touché en ({x}, {y})")
+                if(self.bateaux[marque].coulé(self)):
+                    print(f"{Grille.types[marque]} {marque} coulé !")
+
+                
         print()
         
         return (x)*self.nombre_colonnes+(y)
@@ -48,7 +57,7 @@ class Grille:
         if self.peut_placer(bateau):
             for (l, c) in bateau.positions:
                 self.matrice[l*self.nombre_colonnes+c] = bateau.marque
-            self.bateaux.append(bateau)
+            self.bateaux[bateau.marque] = bateau
             return True
         else:
             print(f"le bateau de coords : {bateau.positions} ne rentre pas dans la grille\n")
@@ -59,7 +68,7 @@ class Grille:
             if l < 0 or c < 0 or l >= self.nombre_lignes or c >= self.nombre_colonnes:
                 return False
             
-        for b in self.bateaux:
+        for b in self.bateaux.values():
             if bateau.chevauche(b):
                 return False
 
