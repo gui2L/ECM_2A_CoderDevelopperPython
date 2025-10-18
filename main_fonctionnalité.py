@@ -50,6 +50,9 @@ def main():
     ajout3 = g.ajoute(Sous_marin1)
     ajout4 = g.ajoute(Croiseur1)
 
+    Bateau1 = Bateau(2, 3)
+    g.ajoute(Bateau1)
+
     print(g)
     return 0
 
