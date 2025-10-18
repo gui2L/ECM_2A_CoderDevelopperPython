@@ -9,14 +9,6 @@ def main():
     print(g)
     print()
 
-    g.tirer(1, 1)
-    g.tirer(2, 1)
-    g.tirer(4, 3)
-    g.tirer(5, 8)
-
-    print(g)
-    print()
-
     b1 = Bateau(2, 3, 4)
     b2 = Bateau(1, 4, 2, True)
     b3 = Bateau(3, 5, 4)
@@ -25,8 +17,15 @@ def main():
     g.ajoute(b2)
     g.ajoute(b3)
     g.ajoute(b4)
-    
     print(g)
+
+    g.tirer(1, 4)
+    g.tirer(2, 4)
+    print(g)
+
+    print(b2.coulé(g))
+    print(b3.coulé(g))
+
     return 0
 
 if __name__ == "__main__":

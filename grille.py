@@ -1,9 +1,9 @@
 from bateau import Bateau
 
 class Grille:
-    vide = "🟦" 
+    vide = "〰️" 
     icon_bat = "⛵"
-    touche = "💣"
+    touche = "💥"
 
 
     def __init__(self, nombre_lignes=4, nombre_colonnes=4):
@@ -30,18 +30,18 @@ class Grille:
         print()
 
     def tirer(self, x:int, y:int, touche=touche):
-        if (x <= 0 or x > self.nombre_lignes or y <= 0 or y > self.nombre_colonnes):
+        if (x < 0 or x >= self.nombre_lignes or y < 0 or y >= self.nombre_colonnes):
             print("coordonnées invalides")
             return -1
         else:
-            if (self.matrice[(x-1)*self.nombre_colonnes+(y-1)] != Grille.touche):
-                self.matrice[(x-1)*self.nombre_colonnes+(y-1)] = Grille.touche
+            if (self.matrice[(x)*self.nombre_colonnes+(y)] != Grille.touche):
+                self.matrice[(x)*self.nombre_colonnes+(y)] = Grille.touche
                 print(f"case ({x}, {y}) touchée")
             else:
                 print(f"case ({x}, {y}) déjà touchée")
         print()
         
-        return (x-1)*self.nombre_colonnes+(y-1)
+        return (x)*self.nombre_colonnes+(y)
                 
     def ajoute(self, bateau : Bateau):
         pos = []

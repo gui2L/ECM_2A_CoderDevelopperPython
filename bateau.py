@@ -22,3 +22,9 @@ class Bateau:
     
     def chevauche(self, autre):
         return not set(self.positions).isdisjoint(autre.positions)
+    
+    def coulé(self, g):
+        for tuple in self.positions:
+            if g.matrice[(tuple[0])*g.nombre_colonnes+(tuple[1])] != g.touche:
+                return False
+        return True

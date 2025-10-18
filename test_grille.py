@@ -42,28 +42,31 @@ def test_Grille_affichage(capsys):
 def test_Grille_tirer():
     g = Grille(5, 8)
 
-    error1 = g.tirer(0, 0)
+    error1 = g.tirer(-1, 0)
     assert error1 == -1
 
     error2 = g.tirer(30, 20)
     assert error2 == -1
 
-    t1 = g.tirer(1, 1)
+    t1 = g.tirer(0, 0)
     t2 = g.tirer(3, 6)
     t3 = g.tirer(5, 8)
 
     assert t1 == 0
-    assert t2 == (3-1)*g.nombre_colonnes+(6-1)
-    assert t3 == 39
+    assert t2 == (3)*g.nombre_colonnes+(6)
+    assert t3 == -1
 
 def test_Grille_ajoute():
-    vide = "🟦" 
-    icon_bat = "⛵"
-    touche = "💣"
+    
 
     g1 = Grille(2, 3)
+
+    vide = g1.vide
+    icon_bat = g1.icon_bat
+    touche = g1.touche
+
     g1.ajoute(Bateau(1, 0, longueur=2, vertical=False))
-    assert(g1.matrice == [vide, vide, vide, "⛵", "⛵", vide])
+    assert(g1.matrice == [vide, vide, vide, icon_bat, icon_bat , vide])
 
     g2 = Grille(2, 3)
     g2.ajoute(Bateau(1, 0, longueur=2, vertical=True))
