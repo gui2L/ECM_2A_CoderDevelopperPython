@@ -6,8 +6,18 @@ def main():
     types_bateau = [Porte_avion, Croiseur, Torpilleur, Sous_marin]
     for type in types_bateau:
         g.placer_aleatoirement(type)
-
-    print(g)
+    
+    
+    while True:
+        print(g)
+        while True:
+            try:
+                x, y = map(int, input("Entrez les coordonnées x et y séparées par un espace : ").split())
+                break  
+            except ValueError:
+                print("Saisie invalide ! Veuillez entrer deux nombres séparés par un espace.")
+        g.tirer(x, y)
+    
     return 0
 
 
