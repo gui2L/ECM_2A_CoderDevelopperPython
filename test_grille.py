@@ -1,4 +1,5 @@
 from grille import Grille
+from bateau import Bateau
 
 def test_Grille_init():
     g = Grille() # grille 4x4 par defaut choisie personnellement 
@@ -30,11 +31,11 @@ def test_Grille_affichage(capsys):
     print(g)
 
     output = capsys.readouterr().out
-    assert "~" in output
+    assert Grille.vide in output
 
     s = str(g)
     assert isinstance(s, str)
-    assert s.count("~") == 5 * 8
+    assert s.count(Grille.vide) == 5 * 8
 
 
 
@@ -54,3 +55,17 @@ def test_Grille_tirer():
     assert t1 == 0
     assert t2 == (3-1)*g.nombre_colonnes+(6-1)
     assert t3 == 39
+
+def test_Grille_ajoute():
+    vide = "🟦" 
+    icon_bat = "⛵"
+    touche = "💣"
+
+    g1 = Grille(2, 3)
+    g1.ajoute(Bateau(1, 0, longueur=2, vertical=False))
+    assert(g1.matrice == [vide, vide, vide, "⛵", "⛵", vide])
+
+    g2 = Grille(2, 3)
+    g2.ajoute(Bateau(1, 0, longueur=2, vertical=True))
+    g2.ajoute(Bateau(1, 0, longueur=4, vertical=True))
+    assert(g2.matrice == [vide, vide, vide, vide, vide, vide])
