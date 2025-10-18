@@ -3,8 +3,11 @@ from bateau import *
 
 def main():
     g = Grille(8, 10)
-    pa = Porte_avion()
+    types_bateau = [Porte_avion, Croiseur, Torpilleur, Sous_marin]
+    for type in types_bateau:
+        g.placer_aleatoirement(type)
 
+    print(g)
     return 0
 
 

@@ -1,4 +1,5 @@
 from bateau import Bateau
+import random
 
 class Grille:
     vide = "〰️" 
@@ -52,7 +53,6 @@ class Grille:
         else:
             print(f"le bateau de coords : {bateau.positions} ne rentre pas dans la grille\n")
             return False
-        
 
     def peut_placer(self, bateau):
         for (l, c) in bateau.positions:
@@ -65,6 +65,21 @@ class Grille:
 
         return True
 
+    def placer_aleatoirement(self, type_bateau):
+        pos_possibles = []
+        for ligne in range(self.nombre_lignes):
+            for colonne in range(self.nombre_colonnes):
+                for vertical in (True, False):
+                    b = type_bateau(ligne, colonne, vertical)
+                    if self.peut_placer(b):
+                        pos_possibles.append(b)
+
+        if not pos_possibles:
+            raise RuntimeError("Aucun placement possible pour ce bateau !")
+
+        choisi = random.choice(pos_possibles)
+        self.ajoute(choisi)
+        return choisi
 
 
 
