@@ -44,25 +44,26 @@ class Grille:
         return (x)*self.nombre_colonnes+(y)
                 
     def ajoute(self, bateau):
-        pos = []
-        for i in range(bateau.longueur):
-            x = bateau.positions[i][0]
-            y = bateau.positions[i][1]
-            if (x < 0 or x >= self.nombre_lignes or y < 0 or y >= self.nombre_colonnes):
-                break
-            pos.append((x, y))
-
-        if (len(pos) == bateau.longueur):
-            for i in range(bateau.longueur):
-                x = pos[i][0]
-                y = pos[i][1]
-                self.matrice[(x)*self.nombre_colonnes+(y)] = bateau.marque
+        if self.peut_placer(bateau):
+            for (l, c) in bateau.positions:
+                self.matrice[l*self.nombre_colonnes+c] = bateau.marque
             self.bateaux.append(bateau)
             return True
         else:
             print(f"le bateau de coords : {bateau.positions} ne rentre pas dans la grille\n")
             return False
         
+
+    def peut_placer(self, bateau):
+        for (l, c) in bateau.positions:
+            if l < 0 or c < 0 or l >= self.nombre_lignes or c >= self.nombre_colonnes:
+                return False
+            
+        for b in self.bateaux:
+            if bateau.chevauche(b):
+                return False
+
+        return True
 
 
 

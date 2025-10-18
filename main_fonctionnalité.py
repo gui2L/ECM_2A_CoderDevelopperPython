@@ -54,6 +54,7 @@ def main():
     g.ajoute(Bateau1)
 
     print(g)
+
     return 0
 
 if __name__ == "__main__":

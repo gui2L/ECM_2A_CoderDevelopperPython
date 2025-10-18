@@ -24,8 +24,8 @@ class Bateau:
         return not set(self.positions).isdisjoint(autre.positions)
     
     def coulé(self, g):
-        for tuple in self.positions:
-            if g.matrice[(tuple[0])*g.nombre_colonnes+(tuple[1])] != g.touche:
+        for (l, c) in self.positions:
+            if g.matrice[l*g.nombre_colonnes+c] != g.touche:
                 return False
         return True
     
