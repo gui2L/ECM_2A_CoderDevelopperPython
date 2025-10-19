@@ -3,7 +3,18 @@ Projet *Bataille navale* suivant le cours **Coder et développer en python** à 
 
 --> Objectif : coder en Python un jeu de bataille navale avec une interface pour un joueur uniquement
 
-Support : Grille de taille x (convention du développeur : coords commençant à 1 et non à 0)
+Support & règle : 
+- Grille de taille 8 lignes 10 colonnes 
+- 4 types de bateaux à détruire : {"🚢" : "Porte-avion", "⛴ " : "Croiseur", "🚣" : "Torpilleur", "🐟" : "Sous_marin"}
+- Convention du développeur :
+Les coordonnées à saisir en tant que joueur commencent à 1 et non à 0 :
+✅ (1, 1), (1, 3), (8, 1), (1, 10), (8, 10)
+❌ (0, 0), (0, 1), (1, 0)   
+- La partie se termine une fois tous les bateaux détruits
+
+(idées futures implémentations :
+génération de grille aléatoire (non rectangulaire, plus de types bateaux)
+mode easy (indication "radar") - mode difficile (bateaux en mouvement à chaque tir))
 
 ---
 
