@@ -12,6 +12,7 @@ class Grille:
         self.nombre_colonnes = nombre_colonnes
         self.nombre_lignes = nombre_lignes
         self.bateaux = {}
+        self.nb_bateau_coule = 0
 
     def __str__(self):
         lignes = []
@@ -46,9 +47,12 @@ class Grille:
                 self.matrice[x*self.nombre_colonnes+y] = touche
                 print(f"bateau touché en ({x}, {y})")
                 if(self.bateaux[marque].coulé(self)):
-                    print(f"{Grille.types[marque]} {marque} coulé !")
-
-                
+                    self.nb_bateau_coule += 1
+                    if (self.nb_bateau_coule == len(self.bateaux.keys())):
+                        print(f"{Grille.types[marque]} {marque} coulé ! TOUS LES BATEAUX ONT ETE DETRUITS --> PARTIE GAGNEE !")
+                    else:
+                        print(f"{Grille.types[marque]} {marque} coulé ! encore {len(self.bateaux.keys())-self.nb_bateau_coule} à couler")
+                    
         print()
         
         return (x)*self.nombre_colonnes+(y)
