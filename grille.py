@@ -5,7 +5,7 @@ class Grille:
     vide = "〰️" 
     icon_bat = "⛵"
     touche = "💥"
-    types = {"🚢" : "Porte-avion", "⛴ " : "Croiseur", "🚣" : "Torpilleur", "🐟" : "Sous_marin"}
+    types = {"⛵" : "default", "🚢" : "Porte-avion", "⛴ " : "Croiseur", "🚣" : "Torpilleur", "🐟" : "Sous_marin"}
 
     def __init__(self, nombre_lignes=4, nombre_colonnes=4):
         self.matrice = [Grille.vide for _ in range(nombre_colonnes*nombre_lignes)]
@@ -34,8 +34,8 @@ class Grille:
 
     def tirer(self, x:int, y:int, touche=touche):
         if (x < 0 or x >= self.nombre_lignes or y < 0 or y >= self.nombre_colonnes):
-            print("coordonnées invalides")
-            return -1
+            print("coordonnées de tir invalides")
+            return 0
         else:
             case = self.matrice[(x)*self.nombre_colonnes+(y)]
             if (case == Grille.vide):
@@ -50,12 +50,13 @@ class Grille:
                     self.nb_bateau_coule += 1
                     if (self.nb_bateau_coule == len(self.bateaux.keys())):
                         print(f"{Grille.types[marque]} {marque} coulé ! TOUS LES BATEAUX ONT ETE DETRUITS --> PARTIE GAGNEE !")
+                        return -1
                     else:
                         print(f"{Grille.types[marque]} {marque} coulé ! encore {len(self.bateaux.keys())-self.nb_bateau_coule} à couler")
                     
         print()
         
-        return (x)*self.nombre_colonnes+(y)
+        return 1
                 
     def ajoute(self, bateau):
         if self.peut_placer(bateau):

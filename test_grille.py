@@ -41,29 +41,37 @@ def test_Grille_affichage(capsys):
 
 def test_Grille_tirer():
     g = Grille(5, 8)
+    vide = Grille.vide
 
     error1 = g.tirer(-1, 0)
-    assert error1 == -1
+    assert error1 == 0
 
     error2 = g.tirer(30, 20)
-    assert error2 == -1
+    assert error2 == 0
 
     t1 = g.tirer(0, 0)
     t2 = g.tirer(3, 6)
     t3 = g.tirer(5, 8)
 
-    assert t1 == 0
-    assert t2 == (3)*g.nombre_colonnes+(6)
-    assert t3 == -1
+    assert t1 == 1
+    assert t2 == 1
+    assert t3 == 0
+
+    grille_avec_1bateau_a_detruire = Grille(2, 2)
+    b = Bateau(0, 0)
+    grille_avec_1bateau_a_detruire.ajoute(b)
+    tir = grille_avec_1bateau_a_detruire.tirer(0, 0)
+    assert(grille_avec_1bateau_a_detruire.matrice == ['💥', vide, vide, vide])
+    assert(tir == -1) #bateau détruit --> partie gagnée
+
 
 def test_Grille_ajoute():
     
 
     g1 = Grille(2, 3)
 
-    vide = g1.vide
-    icon_bat = g1.icon_bat
-    touche = g1.touche
+    vide = Grille.vide
+    icon_bat = Grille.icon_bat
 
     ajout1 = g1.ajoute(Bateau(1, 0, longueur=2, vertical=False))
     assert(ajout1 == True)
