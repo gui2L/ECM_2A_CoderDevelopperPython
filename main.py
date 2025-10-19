@@ -7,8 +7,8 @@ def main():
     for type in types_bateau:
         g.placer_aleatoirement(type)
     
-    
-    while True:
+    play = 1
+    while play != -1:
         print(g)
         while True:
             try:
@@ -16,7 +16,7 @@ def main():
                 break  
             except ValueError:
                 print("Saisie invalide ! Veuillez entrer deux nombres séparés par un espace.")
-        g.tirer(x, y)
+        play = g.tirer(x-1, y-1)
     
     return 0
 

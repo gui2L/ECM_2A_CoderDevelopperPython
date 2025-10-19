@@ -25,8 +25,12 @@ class Grille:
 
 
     def afficher(self):
+        col = "  "
+        for i in range(self.nombre_colonnes):
+            col += f"{i+1} "
+        print(col)
         for i in range(self.nombre_lignes):
-            ligne = ""
+            ligne = f"{i+1}"
             for j in range(self.nombre_colonnes):
                 ligne += self.matrice[i*self.nombre_colonnes+j]
             print(ligne)
