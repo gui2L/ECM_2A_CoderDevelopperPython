@@ -13,6 +13,7 @@ class Grille:
         self.nombre_lignes = nombre_lignes
         self.bateaux = {}
         self.nb_bateau_coule = 0
+        self.nb_coup = 0
 
     def __str__(self):
         lignes = []
@@ -41,25 +42,26 @@ class Grille:
             print("coordonnées de tir invalides")
             return 0
         else:
+            self.nb_coup += 1
             case = self.matrice[(x)*self.nombre_colonnes+(y)]
             if (case == Grille.vide):
-                print(f"rien touché en ({x}, {y})")
+                print(f"rien touché en ({x+1}, {y+1})")
             elif (case == touche):
-                print(f"bateau en ({x}, {y}) déjà touché")
+                print(f"bateau en ({x+1}, {y+1}) déjà touché")
             else:
                 marque = case
                 self.matrice[x*self.nombre_colonnes+y] = touche
-                print(f"bateau touché en ({x}, {y})")
+                print(f"bateau touché en ({x+1}, {y+1})")
                 if(self.bateaux[marque].coulé(self)):
                     self.nb_bateau_coule += 1
                     if (self.nb_bateau_coule == len(self.bateaux.keys())):
-                        print(f"{Grille.types[marque]} {marque} coulé ! TOUS LES BATEAUX ONT ETE DETRUITS --> PARTIE GAGNEE !")
+                        print(f"{Grille.types[marque]} {marque} coulé !") 
+                        print("TOUS LES BATEAUX ONT ETE DETRUITS --> PARTIE GAGNEE !")
+                        print(f"score = {self.nb_coup} (tirs)")
                         return -1
                     else:
-                        print(f"{Grille.types[marque]} {marque} coulé ! encore {len(self.bateaux.keys())-self.nb_bateau_coule} à couler")
-                    
+                        print(f"{Grille.types[marque]} {marque} coulé ! encore {len(self.bateaux.keys())-self.nb_bateau_coule} à couler")     
         print()
-        
         return 1
                 
     def ajoute(self, bateau):

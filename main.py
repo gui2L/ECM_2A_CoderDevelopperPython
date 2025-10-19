@@ -9,7 +9,7 @@ def main():
     
     play = 1
     while play != -1:
-        print(g)
+        g.afficher()
         while True:
             try:
                 x, y = map(int, input("Entrez les coordonnées x et y séparées par un espace : ").split())
