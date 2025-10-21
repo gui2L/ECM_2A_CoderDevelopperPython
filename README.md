@@ -12,9 +12,11 @@ Les coordonnées à saisir en tant que joueur commencent à 1 et non à 0 :
 ❌ (0, 0), (0, 1), (1, 0)   
 - La partie se termine une fois tous les bateaux détruits
 
-(idées futures implémentations :
-génération de grille aléatoire (non rectangulaire, plus de types bateaux)
-mode easy (indication "radar") - mode difficile (bateaux en mouvement à chaque tir))
+Idées futures implémentations à faire ou en cours de développement :
+- UI plus avancée (hors terminal, avec module python)
+- génération de grille aléatoire (non rectangulaire, plus de types bateaux)
+- mode facile (indication "radar") - mode difficile (bateaux en mouvement à chaque tir ou plus)
+- types de tir différents
 
 ---
 
