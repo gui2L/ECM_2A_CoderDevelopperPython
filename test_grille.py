@@ -44,25 +44,25 @@ def test_Grille_tirer():
     vide = Grille.vide
 
     error1 = g.tirer(-1, 0)
-    assert error1 == 0
+    assert error1["id"] == 0
 
     error2 = g.tirer(30, 20)
-    assert error2 == 0
+    assert error2["id"] == 0
 
     t1 = g.tirer(0, 0)
     t2 = g.tirer(3, 6)
     t3 = g.tirer(5, 8)
 
-    assert t1 == 1
-    assert t2 == 1
-    assert t3 == 0
+    assert t1["id"] == 1
+    assert t2["id"] == 1
+    assert t3["id"] == 0
 
     grille_avec_1bateau_a_detruire = Grille(2, 2)
     b = Bateau(0, 0)
     grille_avec_1bateau_a_detruire.ajoute(b)
     tir = grille_avec_1bateau_a_detruire.tirer(0, 0)
     assert(grille_avec_1bateau_a_detruire.matrice == ['💥', vide, vide, vide])
-    assert(tir == -1) #bateau détruit --> partie gagnée
+    assert(tir["id"] == -1) #bateau détruit --> partie gagnée
 
 
 def test_Grille_ajoute():
