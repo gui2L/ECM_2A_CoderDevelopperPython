@@ -10,7 +10,7 @@ Support & règle :
 Les coordonnées à saisir en tant que joueur commencent à 1 et non à 0 :
 ✅ (1, 1), (1, 3), (8, 1), (1, 10), (8, 10)
 ❌ (0, 0), (0, 1), (1, 0)   
-- La partie se termine une fois tous les bateaux détruits
+- La partie se termine une fois tous les bateaux détruits ou le nombre de coup est supérieur à ....
 
 Idées futures implémentations à faire ou en cours de développement :
 - UI plus avancée (hors terminal, avec module python)
