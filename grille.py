@@ -33,7 +33,10 @@ class Grille:
         for i in range(self.nombre_lignes):
             ligne = f"{i+1}"
             for j in range(self.nombre_colonnes):
-                ligne += self.matrice[i*self.nombre_colonnes+j]
+                if self.matrice[i*self.nombre_colonnes+j] == Grille.touche:
+                    ligne += self.matrice[i*self.nombre_colonnes+j]
+                else:
+                    ligne += Grille.vide
             print(ligne)
         print()
 

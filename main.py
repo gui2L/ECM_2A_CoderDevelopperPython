@@ -17,7 +17,8 @@ def main():
             except ValueError:
                 print("Saisie invalide ! Veuillez entrer deux nombres séparés par un espace.")
         play = g.tirer(x-1, y-1)
-    
+        
+    g.afficher()
     return 0
 
 
