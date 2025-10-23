@@ -30,7 +30,7 @@ Python `3.13.7`
 ### Récupération du projet sur Github :
 
 ### Execution :
-- Afin de lancer le jeu, éxécuter, à l'endroit du dossier projet, les commandes suivantes dans le terminal :
+- Afin de lancer le jeu, éxécuter, dans le dossier projet, les commandes suivantes dans le terminal :
 ```bash
 python -m venv venv/
 venv\Scripts\activate
