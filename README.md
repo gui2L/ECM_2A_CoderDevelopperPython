@@ -3,7 +3,7 @@ Projet *Bataille navale* suivant le cours **Coder et développer en python** à 
 
 --> Objectif : coder en Python un jeu de bataille navale avec une interface pour un joueur uniquement
 
-<u>Support & règles Version 1.... : </u>
+<u Support & règles Version 1.... : >
 - Grille de taille 8 lignes 10 colonnes 
 - **4 types de bateaux à détruire** : {"🚢" : "Porte-avion", "⛴ " : "Croiseur", "🚣" : "Torpilleur", "🐟" : "Sous_marin"}, **placés aléatoirement** sur la grille 
 - La partie commence après avoir choisi le **mode de jeu** : **test** (bateaux affichés) ou **default** (bateaux masqués)  
