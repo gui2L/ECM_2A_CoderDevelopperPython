@@ -13,7 +13,7 @@ def main():
             print("❌ Saisie invalide ! Veuillez entrer correctement le mode de jeu")
 
     print("\n --> la partie commence ! \n")
-    
+
     g = Grille(8, 10)
     types_bateau = [Porte_avion, Croiseur, Torpilleur, Sous_marin]
     for type in types_bateau:
@@ -34,7 +34,7 @@ def main():
         print(info_du_tir["message"])
 
     print("\n --> la partie est terminée ! \n")
-    print(f"Nombre total de coups (tirs) {g.nb_coup}")
+    print(f"Nombre total de coups (tirs) = {g.nb_coup}")
     print(f"score = {round(11*10/g.nb_coup, 2)}")
 
     return 0
