@@ -91,7 +91,7 @@ class Grille:
         for ligne in range(self.nombre_lignes):
             for colonne in range(self.nombre_colonnes):
                 for vertical in (True, False):
-                    b = type_bateau(ligne, colonne, vertical)
+                    b = type_bateau(ligne=ligne, colonne=colonne, vertical=vertical)
                     if self.peut_placer(b):
                         pos_possibles.append(b)
 
