@@ -25,7 +25,7 @@ class Grille:
         return "\n".join(lignes)
 
 
-    def afficher(self):
+    def afficher(self, mode="default"):
         col = "  "
         for i in range(self.nombre_colonnes):
             col += f"{i+1} "
@@ -33,7 +33,7 @@ class Grille:
         for i in range(self.nombre_lignes):
             ligne = f"{i+1}"
             for j in range(self.nombre_colonnes):
-                if self.matrice[i*self.nombre_colonnes+j] == Grille.touche:
+                if (self.matrice[i*self.nombre_colonnes+j] == Grille.touche or mode == "test"):
                     ligne += self.matrice[i*self.nombre_colonnes+j]
                 else:
                     ligne += Grille.vide
@@ -49,20 +49,20 @@ class Grille:
             self.nb_coup += 1
             case = self.matrice[(x)*self.nombre_colonnes+(y)]
             if (case == Grille.vide):
-                info_du_tir["message"] = f"〰️ rien touché en ({x+1}, {y+1})"
+                info_du_tir["message"] = f"〰️  rien touché ! "
             elif (case == touche):
-                info_du_tir["message"] = f"⛵ bateau en ({x+1}, {y+1}) déjà touché"
+                info_du_tir["message"] = f"⚠️  bateau déjà touché ! "
             else:
                 marque = case
                 self.matrice[x*self.nombre_colonnes+y] = touche
-                info_du_tir["message"] = f"💥 bateau touché en ({x+1}, {y+1})"
+                info_du_tir["message"] = f"💥  bateau touché ! "
                 if(self.bateaux[marque].coulé(self)):  
                     self.nb_bateau_coule += 1
                     if (self.nb_bateau_coule == len(self.bateaux.keys())):
-                        info_du_tir["message"] += f"\n🔥 {Grille.types[marque]} {marque} coulé !\nTOUS LES BATEAUX ONT ETE DETRUITS --> ✨PARTIE GAGNEE !✨ \n score = {self.nb_coup} (tirs)"
+                        info_du_tir["message"] += f"\n-> 🔥 {Grille.types[marque]} {marque} coulé !\nTOUS LES BATEAUX ONT ETE DETRUITS !"
                         info_du_tir["id"] = -1
                     else:
-                        info_du_tir["message"] += f"\n🔥 {Grille.types[marque]} {marque} coulé ! encore {len(self.bateaux.keys())-self.nb_bateau_coule} à couler !"
+                        info_du_tir["message"] += f"\n-> 🔥 {Grille.types[marque]} {marque} coulé ! encore {len(self.bateaux.keys())-self.nb_bateau_coule} à couler !"
         return info_du_tir
                 
     def ajoute(self, bateau):
