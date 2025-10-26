@@ -32,9 +32,6 @@ Python `3.13.7`
 git clone -b main https://github.com/gui2L/ECM_2A_CoderDevelopperPython.git
 ```
 
-### Execution :
-- Afin de lancer le jeu, éxécuter, dans le dossier projet, les commandes suivantes dans le terminal :
-
 Pour **voir les différentes versions** du projet :
 ```bash
 git tag
@@ -45,12 +42,16 @@ Pour **utiliser une version** en particulier (ex: v2.0.0) :
 git checkout v2.0.0
 ```
 
+### Execution :
+- Afin de lancer le jeu, éxécuter, dans le dossier projet, les commandes suivantes dans le terminal :
+
 ```bash
 python -m venv venv/
 venv\Scripts\activate
 venv\Scripts\python -m pip install -r requirements.txt 
 python main.py
 ```
+
 - Une fois le programme éxécuté, il vous sera demandé de selectionner un mode de jeu, la partie commencera alors et vous pourrez effectuer les tirs
 
 ---
