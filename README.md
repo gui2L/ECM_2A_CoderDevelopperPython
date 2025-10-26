@@ -1,18 +1,20 @@
-# Description du répertoire
+### Description du répertoire
 Projet *Bataille navale* suivant le cours **Coder et développer en python** à *Centrale Méditerranée*
 
---> Objectif : coder en Python un jeu de bataille navale avec une interface pour un joueur uniquement
+**Objectif** : coder en Python un jeu de bataille navale avec une interface pour un joueur uniquement
 
 **Support & règles Version 2.0.0** :
+
 - Grille de taille 8 lignes 10 colonnes 
 - **4 types de bateaux à détruire** : {"🚢" : "Porte-avion", "⛴ " : "Croiseur", "🚣" : "Torpilleur", "🐟" : "Sous_marin"}, **placés aléatoirement** sur la grille 
 - La partie commence après avoir choisi le **mode de jeu** : **test** (bateaux affichés) ou **default** (bateaux masqués)  
 - Convention du développeur :
 Les **coordonnées de tir** à saisir (dans le terminal) en tant que joueur **commencent à 1** et non à 0 :
 
-✅ **(1, 1) : case en haut à gauche**, (1, 3), (8, 1), (1, 10), (8, 10)
+        ✅ **(1, 1) : case en haut à gauche**, (1, 3), (8, 1), (1, 10), (8, 10) 
 
-❌ (0, 0), (0, 1), (1, 0) 
+        ❌ (0, 0), (0, 1), (1, 0) 
+
 - **La partie se termine une fois tous les bateaux détruits**
 - Un **score final** est attribué **en fonction du nombre de tir**
 
@@ -25,24 +27,28 @@ Idées futures implémentations à faire ou en cours de développement :
 ---
 
 ### Versions utilisées :
-Python `3.13.7`
+-- Python : `3.13.7`
 
-Projet `1.0.0`(version test), `v2.0.0`(version jeu stable)
+-- Projet : `1.0.0` (version test), `v2.0.0` (version jeu stable)
+
+---
 
 ### Récupération du projet sur Github :
+-- pour cloner localement le projet : 
 ```bash
 git clone -b main https://github.com/gui2L/ECM_2A_CoderDevelopperPython.git
 ```
 
-pour **voir les différentes versions** du projet :
+-- pour **voir les différentes versions** du projet :
 ```bash
 git tag
 ```
 
-pour **utiliser une version** en particulier (ex: v2.0.0) :
+-- pour **utiliser une version** en particulier (ex: v2.0.0) :
 ```bash
 git checkout v2.0.0
 ```
+---
 
 ### Execution :
 - Afin de lancer le jeu, éxécuter, dans le dossier projet, les commandes suivantes dans le terminal :
@@ -54,7 +60,7 @@ venv\Scripts\python -m pip install -r requirements.txt
 python main.py
 ```
 
-une fois le programme éxécuté, il vous sera demandé de selectionner un mode de jeu, la partie commencera alors et vous pourrez effectuer les tirs
+-- une fois le programme éxécuté, il vous sera demandé de selectionner un mode de jeu, la partie commencera alors et vous pourrez effectuer les tirs
 
 ---
 
