@@ -24,8 +24,9 @@ Idées futures implémentations à faire ou en cours de développement :
 
 ---
 
-### Version Python utilisée :
+### Versions utilisées :
 Python `3.13.7`
+Projet `1.0.0`(version test), `v2.0.0`(version jeu stable)
 
 ### Récupération du projet sur Github :
 ```bash
