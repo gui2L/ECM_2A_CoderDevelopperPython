@@ -35,12 +35,12 @@ git clone -b main https://github.com/gui2L/ECM_2A_CoderDevelopperPython.git
 ### Execution :
 - Afin de lancer le jeu, éxécuter, dans le dossier projet, les commandes suivantes dans le terminal :
 
-Pour voir les différentes versions du projet :
+Pour **voir les différentes versions** du projet :
 ```bash
 git tag
 ```
 
-Pour utiliser une version en particulier (ex: v2.0.0) :
+Pour **utiliser une version** en particulier (ex: v2.0.0) :
 ```bash
 git checkout v2.0.0
 ```
