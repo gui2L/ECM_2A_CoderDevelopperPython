@@ -66,6 +66,8 @@ python main.py
 
 ### License : 
 
+Ce projet est distribué sous la licence [MIT License](./LICENSE) © 2025 Guillaume Surleau - Centrale Méditerranée.
+
 --- 
 
 ### Auteur :
