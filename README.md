@@ -60,7 +60,7 @@ venv\Scripts\python -m pip install -r requirements.txt
 python main.py
 ```
 
--- une fois le programme éxécuté, il vous sera demandé de selectionner un mode de jeu, la partie commencera alors et vous pourrez effectuer les tirs
+-- une fois le programme éxécuté, il vous sera demandé de selectionner un mode de jeu, la partie commencera alors et vous pourrez effectuer les tirs en saisissant les coordonnées
 
 ---
 
