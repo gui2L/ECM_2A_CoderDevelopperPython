@@ -19,7 +19,7 @@ Les **coordonnées de tir** à saisir (dans le terminal) en tant que joueur **co
 - Un **score final** est attribué **en fonction du nombre de tir**
 
 Idées futures implémentations à faire ou en cours de développement :
-- UI plus avancée (hors terminal, avec module python)
+- UI plus avancée (avec module python, hors terminal)
 - génération de grille aléatoire (non rectangulaire, plus de types bateaux)
 - mode facile (indication "radar") - mode difficile (bateaux en mouvement à chaque tir ou plus)
 - types de tir différents
@@ -59,7 +59,7 @@ venv\Scripts\python -m pip install -r requirements.txt
 python main.py
 ```
 
--- une fois le programme éxécuté, il vous sera demandé de selectionner un mode de jeu, la partie commencera alors et vous pourrez effectuer les tirs en saisissant les coordonnées
+-- une fois le programme éxécuté, il vous sera demandé de selectionner un mode de jeu, la partie commencera alors et vous pourrez effectuer les tirs en saisissant les coordonnées dans le terminal
 
 ---
 
